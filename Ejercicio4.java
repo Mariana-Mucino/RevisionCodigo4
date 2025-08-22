@@ -6,14 +6,14 @@ public class Ejercicio4 { //Se modifica el nombre de la clase
 
  public static void main(String[] args) { //Se agrega el método main
 	
-    
+	 Scanner s = new Scanner(System.in);//Se agrega System.in
+	 
     System.out.print("Turno del jugador 1 (introduzca piedra, papel o tijeras): ");
-    Scanner s1 = new Scanner(System.in); //Se mueve el scanner y se modifica el s
-	String j1 = s1.nextLine();
+	String j1 = s.nextLine();
     
     System.out.print("Turno del jugador 2 (introduzca piedra, papel o tijeras): "); //Se modifica el número de jugador
-    Scanner s2 = new Scanner(System.in);
-    String j2 = s2.nextLine(); //Se modifica el s
+    //Se elimina el scanner
+    String j2 = s.nextLine();
     
     if (j1 == j2) {
       System.out.println("Empate");
@@ -24,11 +24,13 @@ public class Ejercicio4 { //Se modifica el nombre de la clase
           if (j2 == "tijeras") {
             g = 1;
           }
+          break; //Se agrega break
 
         case "papel":
           if (j2 == "piedra") {
             g = 1;
           }
+          break; //Se agrega break
           
         case "tijera":
           if (j2.equals("papel")) {
@@ -40,7 +42,7 @@ public class Ejercicio4 { //Se modifica el nombre de la clase
       System.out.println("Gana el jugador " + g);
     }
   
-    
+    s.close();//Se cierra el scanner
     
 	 }//main
 	 
